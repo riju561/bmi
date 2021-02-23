@@ -20,8 +20,8 @@
     text-align: center;
     font-size: 4rem;
     margin-bottom: 10px;
-    font-family: 'Teko', sans-serif;
-    font-weight: 700;
+    font-family: 'Lobster', cursive;
+    font-weight: bold;
 }
 .content{
     color: #fdfcdc;
@@ -79,5 +79,6 @@
     font-size: 3rem;
 }
 .info{
-    font-weight: bold;
+    font-weight: bolder;
+    font-size: 3.5rem;
 }
