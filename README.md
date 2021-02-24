@@ -1,3 +1,10 @@
+# BMI Calculator
+The site calculates the bmi based on the given inputs.<br/>
+The project can be started by `gatsby develop`. The project will start on port 8000.<br/>
+This project is hosted on Github pages -[BMI](https://riju561.github.io/bmi/)
+
+
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.com">
