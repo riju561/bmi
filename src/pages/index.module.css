@@ -80,5 +80,54 @@
 }
 .info{
     font-weight: bolder;
-    font-size: 3.5rem;
+}
+@media only screen and (max-width:1100px){
+    .head{
+        font-size: 3rem;
+    }
+    .input,.select{
+        font-size: 1rem;
+    }
+    .col,.button{
+        font-size: 1.5rem;
+    }
+    .c{
+        font-size: 2rem;
+    }
+}
+@media only screen and (max-width:576px){
+    .head{
+        font-size: 3rem;
+    }
+    .input,.select{
+        font-size: 1rem;
+    }
+    .cont{
+        display: block;
+    }
+    .col{
+        font-size: 1.5rem;
+        width: 80vw;
+    }
+    .button{
+        font-size: 1.5rem;
+    }
+}
+@media only screen and (max-width:450px){
+    .head{
+        font-size: 2rem;
+    }
+    .input,.select{
+        font-size: 0.75rem;
+    }
+    .cont{
+        display: block;
+    }
+    .col{
+        font-size: 1rem;
+        width: 80vw;
+    }
+    .button{
+        font-size: 1.5rem;
+    }
 }

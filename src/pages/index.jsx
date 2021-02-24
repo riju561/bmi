@@ -5,13 +5,19 @@ const Home = () => {
   const [bmi, setBmi] = useState(0)
   const [type, setType] = useState("metric")
   const [btype, setBType] = useState(null)
+  
+  //Sets data at starting
   useEffect(() => {
     setBmi(0)
     setBType(null)
   }, [])
+  
+  //Everytime bmi value changes the function runs
   useEffect(() => {
     setBodyType()
   }, [bmi])
+  
+  //Sets the body type
   const setBodyType = () => {
     if (bmi > 0 && bmi < 18.5) {
       setBType("Underweight")
@@ -23,6 +29,8 @@ const Home = () => {
       setBType("Obese")
     }
   }
+  
+  //Calculates the bmi
   const getBmi = e => {
     e.preventDefault()
     setBmi(0)
@@ -33,10 +41,16 @@ const Home = () => {
     } else {
       setBmi(((w * 703) / (h * h)).toFixed(2))
     }
+    if (h == 0 || w == 0) {
+      setBmi(-1)
+    }
   }
+  
+  //Sets the measurement type
   const setHandler = e => {
     setType(e.target.value)
   }
+
   return (
     <div className={styles.div}>
       <div className={styles.box}>
@@ -44,8 +58,10 @@ const Home = () => {
           <p className={styles.head}>BMI Calculator</p>
           <div className={styles.cont}>
             <div className={styles.col}>
+              {/* Option to choose measurement unit type */}
               <label for="type">
                 Choose a measurement type :
+                <br />
                 <select
                   name="type"
                   id="type"
@@ -57,6 +73,7 @@ const Home = () => {
                 </select>
               </label>
               <br />
+              {/* Input to enter height and weight */}
               <label>
                 Enter height in cm/inches : <br />
                 <input
@@ -80,10 +97,13 @@ const Home = () => {
               </button>
               <br />
             </div>
+            {/* Displays BMI */}
             <div className={styles.col}>
               <div className={styles.a}>
                 {bmi === 0 ? (
                   <p>Get your BMI by entering your height and weight</p>
+                ) : bmi === -1 ? (
+                  <p>Height or weight cannot be 0</p>
                 ) : (
                   <div className={styles.c}>
                     <p>
@@ -95,7 +115,6 @@ const Home = () => {
                   </div>
                 )}
               </div>
-              <br />
             </div>
           </div>
         </div>
